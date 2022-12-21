@@ -17,9 +17,11 @@ public class DemoController {
 	@GetMapping("/publish/{message}")
 	public String publishMessage(@PathVariable("message") final String message) {
 
+		System.out.println("Publishing message: " + message);
 		// Sending the message
 		kafkaTemplate.send(TOPIC, message);
+		System.out.println("Message sent");
 
-		return "Published Successfully";
+		return "Message published Successfully";
 	}
 }
