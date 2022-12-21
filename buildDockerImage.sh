@@ -1,2 +1,3 @@
 #!/bin/sh
-podman build --tag=kafka-rest-demo:latest .
+./mvnw clean package
+docker build --tag=kafka-rest-demo:latest .
